@@ -1,6 +1,11 @@
 -- Keymaps are automatically loaded on the VeryLazy event
 -- Default keymaps that are always set: https://github.com/LazyVim/LazyVim/blob/main/lua/lazyvim/config/keymaps.lua
 -- Add any additional keymaps here
+-- local search = require("config.search")
+local opts = { noremap = true, silent = true }
+local nv = { "n", "v" }
+-- local keymap = vim.keymap.set
+
 local function map(mode, lhs, rhs, opts)
   local keys = require("lazy.core.handler").handlers.keys
   ---@cast keys LazyKeysHandler
@@ -12,5 +17,5 @@ local function map(mode, lhs, rhs, opts)
   end
 end
 
-map({ "n", "v" }, "J", "5j", { silent = true })
-map({ "n", "v" }, "K", "5k", { silent = true })
+map(nv, "J", "5j", opts)
+map(nv, "K", "5k", opts)
