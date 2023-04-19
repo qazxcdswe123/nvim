@@ -1,16 +1,13 @@
 return {
-  {
-    "akinsho/toggleterm.nvim",
-    version = "*",
-    config = true,
-    keys = {
-      {
-        "<leader>sN",
-        function()
-          require("config.search").cht()
-        end,
-        desc = "SO",
-      },
-    },
-  },
+  -- {
+  --   "akinsho/toggleterm.nvim",
+  --   version = "*",
+  --   opts = {
+  --     autochdir = true,
+  --   },
+  --   keys = {
+  --     -- {'<leader>ft', 'require("plugins.toggleterm").toggle()', desc = "toggleterm"},
+  --   },
+  --   cmd = { "ToggleTerm", "TermExec" },
+  -- },
 }
