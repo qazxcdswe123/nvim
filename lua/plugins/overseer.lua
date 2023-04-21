@@ -3,7 +3,7 @@ return {
   config = true,
   cmd = { "OverseerRun", "OverseerToggle" },
   keys = {
-    { "<leader>cR", "<cmd>OverseerRun<CR>", desc = "overseer run" },
-    { "<leader>cT", "<cmd>OverseerToggle<CR>", desc = "overseer toggle" },
+    { "<leader>co", "<cmd>OverseerRun<CR>", desc = "overseer open" },
+    { "<leader>cO", "<cmd>OverseerToggle<CR>", desc = "overseer toggle" },
   },
 }
