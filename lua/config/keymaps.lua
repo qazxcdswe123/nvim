@@ -3,6 +3,7 @@
 -- Add any additional keymaps here
 local opts = { noremap = true, silent = true }
 local nv = { "n", "v" }
+local nvt = { "n", "v", "t" }
 -- local keymap = vim.keymap.set
 
 local function map(mode, lhs, rhs, opts)
@@ -18,12 +19,15 @@ end
 
 map(nv, "J", "5j", opts)
 map(nv, "K", "5k", opts)
+map("n", "<D-v>", "+p", opts)
+map("v", "<C-c>", '"+y', opts)
 
 -- Resize window using <ctrl> arrow keys
-map("n", "<C-Up>", "<cmd>resize -2<cr>", { desc = "Increase window height" })
-map("n", "<C-Down>", "<cmd>resize +2<cr>", { desc = "Decrease window height" })
-map("n", "<C-Left>", "<cmd>vertical resize +2<cr>", { desc = "Decrease window width" })
-map("n", "<C-Right>", "<cmd>vertical resize -2<cr>", { desc = "Increase window width" })
+local ss = require("smart-splits")
+map(nvt, "<C-Up>", ss.resize_up, { desc = "Increase window height" })
+map(nvt, "<C-Down>", ss.resize_down, { desc = "Decrease window height" })
+map(nvt, "<C-Left>", ss.resize_left, { desc = "Decrease window width" })
+map(nvt, "<C-Right>", ss.resize_right, { desc = "Increase window width" })
 
 function _G.set_terminal_keymaps()
   local opts = { buffer = 0 }
@@ -35,10 +39,6 @@ function _G.set_terminal_keymaps()
   map("t", "<C-k>", [[<Cmd>wincmd k<CR>]], opts)
   map("t", "<C-l>", [[<Cmd>wincmd l<CR>]], opts)
   map("t", "<C-w>", [[<C-\><C-n><C-w>]], opts)
-  map("t", "<C-Up>", "<cmd>resize +2<cr>", opts)
-  map("t", "<C-Down>", "<cmd>resize -2<cr>", opts)
-  map("t", "<C-Left>", "<cmd>vertical resize -2<cr>", opts)
-  map("t", "<C-Right>", "<cmd>vertical resize +2<cr>", opts)
 end
 
 -- if you only want these mappings for toggle term use term://*toggleterm#* instead
