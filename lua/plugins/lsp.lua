@@ -14,6 +14,7 @@ return {
       virtual_text = {
         spacing = 2,
       },
+      autoformat = false,
     },
   },
 }
