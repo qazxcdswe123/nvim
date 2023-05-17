@@ -19,6 +19,8 @@ end
 
 map(nv, "J", "5j", opts)
 map(nv, "K", "5k", opts)
+
+-- Neovide
 map("n", "<D-v>", "+p", opts)
 map("v", "<C-c>", '"+y', opts)
 
@@ -28,9 +30,14 @@ map(nvt, "<C-Up>", ss.resize_up, { desc = "Increase window height" })
 map(nvt, "<C-Down>", ss.resize_down, { desc = "Decrease window height" })
 map(nvt, "<C-Left>", ss.resize_left, { desc = "Decrease window width" })
 map(nvt, "<C-Right>", ss.resize_right, { desc = "Increase window width" })
-
 -- moving between splits
 map(nvt, "<C-h>", require("smart-splits").move_cursor_left)
 map(nvt, "<C-j>", require("smart-splits").move_cursor_down)
 map(nvt, "<C-k>", require("smart-splits").move_cursor_up)
 map(nvt, "<C-l>", require("smart-splits").move_cursor_right)
+
+-- nvim-spider
+map(nv, "w", "<cmd>lua require('spider').motion('w')<CR>", { desc = "Spider-w" })
+map(nv, "e", "<cmd>lua require('spider').motion('e')<CR>", { desc = "Spider-e" })
+map(nv, "b", "<cmd>lua require('spider').motion('b')<CR>", { desc = "Spider-b" })
+map(nv, "ge", "<cmd>lua require('spider').motion('ge')<CR>", { desc = "Spider-ge" })
