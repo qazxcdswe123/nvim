@@ -23,7 +23,18 @@ return {
     end,
     -- keymap end
     opts = {
+      setup = {
+        clangd = function(_, opts)
+          opts.capabilities.offsetEncoding = { "utf-16" }
+          opts.filetypes = { "c", "cpp" }
+        end,
+      },
       autoformat = false,
+      diagnostics = {
+        virtual_text = {
+          spacing = 2,
+        },
+      },
     },
   },
 }
