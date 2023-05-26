@@ -41,3 +41,7 @@ map(nv, "w", "<cmd>lua require('spider').motion('w')<CR>", { desc = "Spider-w" }
 map(nv, "e", "<cmd>lua require('spider').motion('e')<CR>", { desc = "Spider-e" })
 map(nv, "b", "<cmd>lua require('spider').motion('b')<CR>", { desc = "Spider-b" })
 map(nv, "ge", "<cmd>lua require('spider').motion('ge')<CR>", { desc = "Spider-ge" })
+
+-- split window 
+map("n", "<leader>wh", "<cmd>wincmd H<CR>", { desc = "Horizontal to Vertical" })
+map("n", "<leader>wj", "<cmd>wincmd J<CR>", { desc = "Vertical to Horizontal" })
