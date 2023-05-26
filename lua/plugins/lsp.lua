@@ -21,9 +21,6 @@ return {
       keys[#keys + 1] = { "<leader>k", vim.lsp.buf.hover, desc = "Hover" }
     end,
     opts = {
-      virtual_text = {
-        spacing = 2,
-      },
       autoformat = false,
     },
   },
