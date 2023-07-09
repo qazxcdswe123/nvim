@@ -24,17 +24,19 @@ map(nv, "K", "5k", opts)
 map("n", "<D-v>", "+p", opts)
 map("v", "<C-c>", '"+y', opts)
 
--- Resize window using <ctrl> arrow keys
+
+-- smart-splits
 local ss = require("smart-splits")
+-- Resize window using <ctrl> arrow keys
 map(nvt, "<C-Up>", ss.resize_up, { desc = "Increase window height" })
 map(nvt, "<C-Down>", ss.resize_down, { desc = "Decrease window height" })
 map(nvt, "<C-Left>", ss.resize_left, { desc = "Decrease window width" })
 map(nvt, "<C-Right>", ss.resize_right, { desc = "Increase window width" })
 -- moving between splits
-map(nvt, "<C-h>", require("smart-splits").move_cursor_left)
-map(nvt, "<C-j>", require("smart-splits").move_cursor_down)
-map(nvt, "<C-k>", require("smart-splits").move_cursor_up)
-map(nvt, "<C-l>", require("smart-splits").move_cursor_right)
+map(nvt, "<C-H>", ss.move_cursor_left, { desc = "Move cursor left split" })
+map(nvt, "<C-j>", ss.move_cursor_down, { desc = "Move cursor down split" })
+map(nvt, "<C-k>", ss.move_cursor_up, { desc = "Move cursor up split" })
+map(nvt, "<C-l>", ss.move_cursor_right, { desc = "Move cursor right split" })
 
 -- nvim-spider
 map(nv, "w", "<cmd>lua require('spider').motion('w')<CR>", { desc = "Spider-w" })
