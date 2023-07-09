@@ -11,6 +11,7 @@ return {
           node_decremental = "<bs>",
         },
       },
+      auto_install = true,
     },
   },
 }
