@@ -1,16 +1,7 @@
 return {
   {
     "neovim/nvim-lspconfig",
-    dependencies = {
-      {
-        "SmiteshP/nvim-navbuddy",
-        dependencies = {
-          "SmiteshP/nvim-navic",
-          "MunifTanjim/nui.nvim",
-        },
-        opts = { lsp = { auto_attach = true } },
-      },
-    },
+    -- https://www.lazyvim.org/plugins/lsp
     -- keymap start
     init = function()
       local keys = require("lazyvim.plugins.lsp.keymaps").get()
@@ -26,18 +17,19 @@ return {
       inlay_hints = {
         enabled = true,
       },
-      setup = {
-        clangd = function(_, opts)
-          opts.capabilities.offsetEncoding = { "utf-16" }
-          opts.filetypes = { "c", "cpp" }
-        end,
-      },
       autoformat = false,
       diagnostics = {
         virtual_text = {
           spacing = 2,
         },
       },
+
+      servers = {
+        racket_langserver = {
+          cmd = { "racket", "--lib", "racket-langserver", "--", "--stdio" },
+          filetypes = { "racket", "scheme" },
+        }
+      }
     },
   },
 }
