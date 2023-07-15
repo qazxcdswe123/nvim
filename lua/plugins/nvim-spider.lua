@@ -1,3 +1,3 @@
 return {
-  { "chrisgrieser/nvim-spider", event = VeryLazy },
+  { "chrisgrieser/nvim-spider", event = "VeryLazy" },
 }
