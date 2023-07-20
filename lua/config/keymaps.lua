@@ -47,3 +47,8 @@ map(nv, "ge", "<cmd>lua require('spider').motion('ge')<CR>", { desc = "Spider-ge
 -- split window 
 map("n", "<leader>wh", "<cmd>wincmd H<CR>", { desc = "Horizontal to Vertical" })
 map("n", "<leader>wj", "<cmd>wincmd J<CR>", { desc = "Vertical to Horizontal" })
+
+-- system clipboard using <leader>cc
+map(nvt, "<leader>cc", '"+y', { desc = "Copy to clipboard" })
+
+map("t", "<esc><esc>", [[<C-\><C-o>:ToggleTerm<CR>]], { noremap = true })
