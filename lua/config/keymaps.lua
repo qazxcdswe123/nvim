@@ -24,6 +24,7 @@ map(nv, "K", "5k", opts)
 map("n", "<D-v>", "+p", opts)
 map("v", "<C-c>", '"+y', opts)
 
+map("n", "gh", vim.lsp.buf.hover, opts)
 
 -- smart-splits
 local ss = require("smart-splits")
