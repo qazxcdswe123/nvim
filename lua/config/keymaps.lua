@@ -17,8 +17,8 @@ local function map(mode, lhs, rhs, opts)
   end
 end
 
-map(nv, "D", "5j", opts)
-map(nv, "U", "5k", opts)
+map(nv, "J", "5j", opts)
+map(nv, "K", "5k", opts)
 
 -- Neovide
 map("n", "<D-v>", "+p", opts)
