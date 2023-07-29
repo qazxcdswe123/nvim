@@ -17,14 +17,14 @@ local function map(mode, lhs, rhs, opts)
   end
 end
 
-map(nv, "J", "5j", opts)
-map(nv, "K", "5k", opts)
+map(nv, "D", "5j", opts)
+map(nv, "U", "5k", opts)
 
 -- Neovide
 map("n", "<D-v>", "+p", opts)
 map("v", "<C-c>", '"+y', opts)
 
-map("n", "gh", vim.lsp.buf.hover, opts)
+map("n", "gh", vim.lsp.buf.hover, { desc = "Show hover" })
 
 -- smart-splits
 local ss = require("smart-splits")
@@ -45,7 +45,7 @@ map(nv, "e", "<cmd>lua require('spider').motion('e')<CR>", { desc = "Spider-e" }
 map(nv, "b", "<cmd>lua require('spider').motion('b')<CR>", { desc = "Spider-b" })
 map(nv, "ge", "<cmd>lua require('spider').motion('ge')<CR>", { desc = "Spider-ge" })
 
--- split window 
+-- split window
 map("n", "<leader>wh", "<cmd>wincmd H<CR>", { desc = "Horizontal to Vertical" })
 map("n", "<leader>wj", "<cmd>wincmd J<CR>", { desc = "Vertical to Horizontal" })
 
@@ -53,3 +53,8 @@ map("n", "<leader>wj", "<cmd>wincmd J<CR>", { desc = "Vertical to Horizontal" })
 map(nvt, "<leader>cc", '"+y', { desc = "Copy to clipboard" })
 
 map("t", "<esc><esc>", [[<C-\><C-o>:ToggleTerm<CR>]], { noremap = true })
+
+-- map <leader>qq to :q<CR>
+map("n", "<leader>qq", ":q<CR>", { desc = "Close window" })
+-- map <leader>qQ to :qa<CR>
+map("n", "<leader>qQ", ":qa<CR>", { desc = "Close all window" })
