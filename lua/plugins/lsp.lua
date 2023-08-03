@@ -28,8 +28,13 @@ return {
         racket_langserver = {
           cmd = { "racket", "--lib", "racket-langserver", "--", "--stdio" },
           filetypes = { "racket", "scheme" },
-        }
-      }
+        },
+        rust_analyzer = {
+          keys = {
+            { "<leader>k", "<cmd>RustHoverActions<cr>", desc = "Hover Actions (Rust)" },
+          },
+        },
+      },
     },
   },
 }
