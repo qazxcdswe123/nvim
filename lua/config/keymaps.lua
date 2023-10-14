@@ -21,8 +21,19 @@ map(nv, "J", "5j", opts)
 map(nv, "K", "5k", opts)
 
 -- Neovide
-map("n", "<D-v>", "+p", opts)
-map("v", "<C-c>", '"+y', opts)
+vim.keymap.set('n', '<D-s>', ':w<CR>') -- Save
+vim.keymap.set('v', '<D-c>', '"+y') -- Copy
+vim.keymap.set('n', '<D-v>', '"+P') -- Paste normal mode
+vim.keymap.set('v', '<D-v>', '"+P') -- Paste visual mode
+vim.keymap.set('c', '<D-v>', '<C-R>+') -- Paste command mode
+vim.keymap.set('i', '<D-v>', '<ESC>l"+Pli') -- Paste insert mode
+
+-- Allow clipboard copy paste in neovim
+vim.api.nvim_set_keymap('', '<D-v>', '+p<CR>', { noremap = true, silent = true})
+vim.api.nvim_set_keymap('!', '<D-v>', '<C-R>+', { noremap = true, silent = true})
+vim.api.nvim_set_keymap('t', '<D-v>', '<C-R>+', { noremap = true, silent = true})
+vim.api.nvim_set_keymap('v', '<D-v>', '<C-R>+', { noremap = true, silent = true})
+
 
 map("n", "gh", vim.lsp.buf.hover, { desc = "Show hover" })
 
@@ -58,3 +69,4 @@ map("t", "<esc><esc>", [[<C-\><C-o>:ToggleTerm<CR>]], { noremap = true })
 map("n", "<leader>qq", ":q<CR>", { desc = "Close window" })
 -- map <leader>qQ to :qa<CR>
 map("n", "<leader>qQ", ":qa<CR>", { desc = "Close all window" })
+

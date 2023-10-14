@@ -17,7 +17,6 @@ return {
       inlay_hints = {
         enabled = true,
       },
-      autoformat = false,
       diagnostics = {
         virtual_text = {
           spacing = 2,
